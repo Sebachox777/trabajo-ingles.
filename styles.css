@@ -1,0 +1,128 @@
+/* Elimina márgenes y paddings por defecto en todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILOS GENERALES */
+body {
+    font-family: "Poppins", "Segoe UI", sans-serif; /* Fuente texto */
+    background: #f9fafb;  /* Color de fondo */
+    color: #2c3e50;       /* Color de texto */
+    line-height: 1.7;     /* Espaciado entre líneas */
+}
+
+/* HEADER (barra superior fija) */
+header {
+    position: fixed;      /* Siempre visible al hacer scroll */
+    top: 0;
+    left: 0;
+    width: 100%;          /* Ocupa todo el ancho */
+    background: #f6c618;  /* color recuadro superior (lo de color amarillo) */
+    color: white;        /* color letra ( del recuadro amarillo) */
+    display: flex;        
+    justify-content: space-between; /* Título a la izquierda, menú a la derecha */
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Las sombras cuando coloca el cursor */
+    z-index: 1000;        /* Se mantiene por encima del resto */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Menú de navegación */
+nav a {
+    color: rgb(247, 247, 247); /* color letra donde esta inicio... */
+    margin-left: 25px;
+    text-decoration: none;  /* Quita el subrayado */
+    font-weight: 500;
+    transition: color 0.3s ease; /* Transición suave en el hover (abajo lo explico mas */
+}
+
+nav a:hover {
+    color: #5e501b; /* Cambia a dorado cuando el mouse pasa por encima */
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 1000px;  /* Ancho máximo */
+    margin: 100px auto 50px; /* Centrado, con espacio arriba para el header fijo */
+    padding: 0 20px;
+}
+
+/* SECCIONES */
+.section {
+    background: white;
+    padding: 50px;
+    margin: 30px 0;
+    border-radius: 14px; /* Bordes redondeados */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+.section:hover {
+    transform: translateY(-6px); /* Se eleva un poco al pasar el mouse */
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12); /* Sombra más intensa */
+}
+
+/*  TÍTULOS  */
+.section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #1e3a8a;         /* Color de letra en los recuados*/
+    border-left: 5px solid #facc15; /* Línea decorativa dorada a la izquierda */
+    padding-left: 12px;
+}
+
+/*  TEXTO  */
+p {
+    font-size: 1.1rem;
+    color: #444; 
+}
+
+/*  IMAGEN  */
+img {
+    width: 280px;
+    border-radius: 12px; /* Bordes redondeados (rectángulo) */
+    border: 4px solid #1e3a8a;  /* Color de la margen en la imagen (si lo quiere sin la margen borra esta linea */ 
+    display: block;
+    margin: 25px auto; /* Centrada */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+}
+
+/*  FOOTER  */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e3a8a;
+    color: white;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/*  MEJORA jJAJA (para celular)  */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Menú y título uno debajo del otro */
+        align-items: flex-start;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    .section {
+        padding: 30px 20px;
+    }
+    img {
+        width: 100%; /* En pantallas pequeñas la imagen ocupa todo el ancho */
+    }
+}
